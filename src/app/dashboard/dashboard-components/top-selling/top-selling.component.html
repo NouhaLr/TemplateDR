@@ -1,0 +1,66 @@
+<div class="card">
+    <div class="card-body">
+        <!-- title -->
+        <h4 class="card-title">ListUser</h4>
+        <!-- <h5 class="card-subtitle">Overview of the projects</h5> -->
+        <div class="my-3">
+            <a href="/add"><button type="button" class="btn btn-primary">Add User</button></a>
+        </div>
+        <!-- title -->
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th class="text-dark font-medium fs-4">Id</th>
+                        <th class="text-dark font-medium fs-4">Firstname</th>
+                        <th class="text-dark font-medium fs-4">Lastname</th>
+                        <th class="text-dark font-medium fs-4">profile</th>
+                        <th class="text-dark font-medium fs-4">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <!-- <img [src]=ts.image alt="user" width="45" class="rounded-circle"> -->
+                                <div class="ms-3">
+                                    <h5 class="mb-0 font-medium">{{user.id}}</h5>
+                                    <!-- <span class="text-muted">{{user.Firstname}}</span> -->
+                                </div>
+                            </div>
+                        </td>
+                        <!-- <td class="fs-4">{{user.Lastname}}</td> -->
+                        <!-- <td>
+                            <span class="p-2 bg-{{ts.status}} rounded-circle d-inline-block ms-3"></span>
+                        </td> -->
+
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{user.firstname}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{user.lastname}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{user.profile}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{user.email}}</h5>
+                        </td>
+                        <td>
+                            <div class="d-inline mx-2">
+                                <button class="btn btn-warning" (click)="updateUser(user.id)"
+                                    type="button">Update</button>
+                            </div>
+                            <div class="d-inline">
+                                <button class="btn btn-danger" (click)="deleteUser(user.id)"
+                                    type="button">Delete</button>
+                            </div>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
